@@ -2,7 +2,7 @@
 name = "index"
 publish = false
 version = "0.11.1"
-authors = ["Wilson Lin <code@wilsonl.in>"]
+authors = ["Wilson Lin <code@wilsonl.in>", "Ze-Zheng Wu <zzwu@zju.edu.cn>"]
 edition = "2021"
 
 [lib]
