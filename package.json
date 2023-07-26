@@ -10,8 +10,12 @@
   "main": "./dist/web/index.js",
   "types": "./dist/web/index.d.ts",
   "exports": {
-    "import": "./dist/web/index.js",
-    "default": "./dist/web/index.js"
+    ".": {
+      "import": "./dist/web/index.js",
+      "default": "./dist/web/index.js"
+    },
+    "./web/wasm": "./dist/web/index_bg.wasm",
+    "./no-modules/wasm": "./dist/no-modules/index_bg.wasm"
   },
   "repository": {
     "type": "git",
