@@ -12,4 +12,16 @@ npm i minify-html-wasm
 
 ```ts
 import init, { minify } from "minify-html-wasm";
+
+const encoder = new TextEncoder();
+const decoder = new TextDecoder();
+
+await init("https://cdn.jsdelivr.net/npm/minify-html-wasm/index_bg.wasm");
+
+const minified = decoder.decode(
+  minify(encoder.encode("<p>  Hello, world!  </p>"), {
+    keep_spaces_between_attributes: true,
+    keep_comments: true,
+  })
+);
 ```
