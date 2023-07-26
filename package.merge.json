@@ -1,0 +1,28 @@
+{
+  "name": "minify-html-wasm",
+  "description": "Extremely fast and smart HTML + JS + CSS minifier",
+  "type": "module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sec-ant/minify-html-wasm.git"
+  },
+  "contributors": [
+    {
+      "email": "npm@wilsonl.in",
+      "name": "Wilson Lin",
+      "url": "https://wilsonl.in/"
+    },
+    {
+      "email": "zzwu@zju.edu.cn",
+      "name": "Ze-Zheng Wu",
+      "url": "https://github.com/Sec-ant"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sec-ant/minify-html-wasm/issues"
+  },
+  "homepage": "https://github.com/Sec-ant/minify-html-wasm#readme",
+  "keywords": ["compress", "compressor", "fast", "html", "minifier", "minify"]
+}

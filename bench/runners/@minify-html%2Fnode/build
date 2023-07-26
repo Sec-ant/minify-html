@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-set -Eeuxo pipefail
-
-pushd ../../../nodejs
-npm run build
-popd
-
-npm i
