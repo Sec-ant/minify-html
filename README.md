@@ -16,7 +16,7 @@ import init, { minify } from "minify-html-wasm";
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 
-await init("https://cdn.jsdelivr.net/npm/minify-html-wasm/web/wasm");
+await init("https://fastly.jsdelivr.net/npm/minify-html-wasm@0.1.1/dist/web/index_bg.wasm");
 
 const minified = decoder.decode(
   minify(encoder.encode("<p>  Hello, world!  </p>"), {
