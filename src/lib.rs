@@ -1,3 +1,5 @@
+use serde::{Deserialize, Serialize};
+use tsify::Tsify;
 use wasm_bindgen::prelude::*;
 
 #[cfg(target_arch = "wasm32")]
@@ -8,25 +10,39 @@ use lol_alloc::{FreeListAllocator, LockedAllocator};
 static ALLOCATOR: LockedAllocator<FreeListAllocator> =
     LockedAllocator::new(FreeListAllocator::new());
 
-#[wasm_bindgen]
+#[derive(Tsify, Serialize, Deserialize)]
+#[tsify(into_wasm_abi, from_wasm_abi)]
 pub struct Config {
+    #[tsify(optional)]
     pub do_not_minify_doctype: Option<bool>,
+    #[tsify(optional)]
     pub ensure_spec_compliant_unquoted_attribute_values: Option<bool>,
+    #[tsify(optional)]
     pub keep_closing_tags: Option<bool>,
+    #[tsify(optional)]
     pub keep_html_and_head_opening_tags: Option<bool>,
+    #[tsify(optional)]
     pub keep_spaces_between_attributes: Option<bool>,
+    #[tsify(optional)]
     pub keep_comments: Option<bool>,
+    #[tsify(optional)]
     pub minify_css: Option<bool>,
+    #[tsify(optional)]
     pub minify_css_level_1: Option<bool>,
+    #[tsify(optional)]
     pub minify_css_level_2: Option<bool>,
+    #[tsify(optional)]
     pub minify_css_level_3: Option<bool>,
+    #[tsify(optional)]
     pub minify_js: Option<bool>,
+    #[tsify(optional)]
     pub remove_bangs: Option<bool>,
+    #[tsify(optional)]
     pub remove_processing_instructions: Option<bool>,
 }
 
 #[wasm_bindgen]
-pub fn minify(code: &[u8], config: &Config) -> Vec<u8> {
+pub fn minify(code: &[u8], config: Config) -> Vec<u8> {
     let cfg = minify_html::Cfg {
         do_not_minify_doctype: config.do_not_minify_doctype.unwrap_or(false),
         ensure_spec_compliant_unquoted_attribute_values: config
