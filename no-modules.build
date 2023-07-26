@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -Eeuxo pipefail
+
+pushd "$(dirname "$0")" >/dev/null
+
+rm -rf dist/no-modules
+wasm-pack build --target no-modules --out-dir dist/no-modules
+
+pushd dist/no-modules >/dev/null
+
+rm -rf .gitignore package.json README.md
+
+popd >/dev/null
+
+popd >/dev/null

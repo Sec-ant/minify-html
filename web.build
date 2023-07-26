@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -Eeuxo pipefail
+
+pushd "$(dirname "$0")" >/dev/null
+
+rm -rf dist/web
+wasm-pack build --target web --out-dir dist/web
+
+pushd dist/web >/dev/null
+
+rm -rf .gitignore package.json README.md
+
+popd >/dev/null
+
+popd >/dev/null
