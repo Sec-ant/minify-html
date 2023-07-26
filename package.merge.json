@@ -1,6 +1,7 @@
 {
   "name": "minify-html-wasm",
   "description": "Extremely fast and smart HTML + JS + CSS minifier",
+  "private": false,
   "type": "module",
   "main": "index.js",
   "repository": {
